@@ -1,7 +1,9 @@
 from Modules.Utils import *
 import json
 import re
-import copy
+import shutil
+import os
+
 class smHelper:
     logger = ""
     state = ""
@@ -22,9 +24,14 @@ class smHelper:
             return True
         return False
 
+class Field:
+    definition = ""
+
+    def __init__(self,  definition):
+        self.definition = definition
 
 class Pin:
-    definition  = ""
+    definition = ""
     # X name pin X Y length orientation sizenum sizename part dmg type shape
 
     def __init__(self,  definition):
@@ -106,8 +113,8 @@ class Symbol:
         self.definition = definition
         self.logger.info("Create symbol: {0}".format(name))
 
-    def addField(self, line):
-        self.fields.append(line)
+    def addField(self, field):
+        self.fields.append(field)
 
     def addPin(self, pin):
         self.pins.append(pin)
@@ -162,17 +169,22 @@ class Symbol:
 
 
         n = int(self.getNumberOfUnits())
-        #pins = sorted(pins, key=sort_pins_by_array)
-        #pins = sorted(pins, key=sort_pins_by_suffix_number)
         for pin in pins:
             pin.setUnit(n-1)
-          #  self.logger.info("{0}".format(pin.getName()))
             self.addPin(Pin(pin.definition))
 
 
     def printPins(self):
         for pin in self.pins:
             self.logger.info("Pin: {0} \t Unit: {1}".format(pin.getName(), pin.getUnit()))
+
+    def write_pins(self, file):
+        for pin in self.pins:
+            file.write("{0}\n".format(pin.definition))
+    def write_definition(self, file):
+        file.write("{0}\n".format(self.definition))
+        for field in self.fields:
+            file.write("{0}\n".format(field.definition))
 
 # Read a library file in return the symbols in it
 def read_kicad_library(file):
@@ -181,7 +193,7 @@ def read_kicad_library(file):
     partDefStop  = re.compile("^ENDDEF")
     drawStart = re.compile("^DRAW")
     drawStop  = re.compile("^ENDDRAW")
-    fieldDef = re.compile("^F[0-9]]")
+    fieldDef = re.compile("^F[0-9]")
     pinDef = re.compile("^X ")
 
     symbols = []
@@ -215,7 +227,7 @@ def read_kicad_library(file):
                 logger.error("Not in parseDraw state")
         elif fieldDef.search(line):
             if sm.isInState("parseDef"):
-                sym.addField(line)
+                sym.addField(Field(line))
             else:
                 logger.error("Not in parseDef state")
 
@@ -258,7 +270,21 @@ def process_library(symbolsIn, jsonCfg):
         else:
             logger.error("Symbol {0} not found".format(name))
 
-
+def write_library(path,name, symbols):
+    if not os.path.isdir(path):
+        #shutil.rmtree(path)
+        os.mkdir(path)
+    with open(path + "/" + name + ".lbr", "w+") as f:
+        f.write("EESchema-LIBRARY Version 2.3\n")
+        for sym in symbols:
+            f.write("#\n")
+            f.write("# Part: {0}\n".format(sym.getName()))
+            f.write("#\n")
+            sym.write_definition(f)
+            f.write("{0}\n".format("DRAW"))
+            sym.write_pins(f)
+            f.write("{0}\n".format("ENDDRAW"))
+            f.write("{0}\n".format("ENDDEF"))
 
 if __name__ == "__main__":
     logger.info("Beautify KiCad Library")
@@ -267,12 +293,13 @@ if __name__ == "__main__":
 
     libFile = thisLoc + "/Libs/LL/SamacSys_Parts.lib"
     cfgFile = thisLoc + "/Config/Config.json"
-
+    outPath = thisLoc + "/tmp"
     with open(cfgFile) as config_file:
         jsonCfg = json.load(config_file)
 
 
     symbols = read_kicad_library(libFile)
-    symbols = process_library(symbols, jsonCfg)
+    process_library(symbols, jsonCfg)
+    write_library(outPath,"test",symbols)
 
 
