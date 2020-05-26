@@ -1,0 +1,12 @@
+{
+  "parts": [
+    {
+      "partname": "CYUSB3014-BZXC",
+      "units": [
+        { "name":"Power", "pins":["VDD","VIO","CVDDQ","VBUS","VBATT","VSS","AVDD","AVSS","U3TXVDDQ","U3RXVDDQ","U3VSSQ","NC"] },
+        { "name":"GPIO", "pins":["GPIO","INT#"] },
+        { "name":"USB-CLK-JTAG", "pins":["SSRXP","SSRXM","SSTXP","SSTXM","DP","DM","XTAL","RESET","T","R_USB","O\\[60\\]","OTG_ID","FSLC","CLKIN","I2C_GPIO"] }
+      ]
+    }
+  ]
+}
