@@ -167,4 +167,80 @@ P 5 0 1 6 200 100 1500 100 1500 -6100 200 -6100 200 100 N
 ENDDRAW
 ENDDEF
 #
+#SamacSys ECAD Model 22-28-4083
+#/761504/130977/2.46/8/4/Connector
+DEF 22-28-4083 J 0 30 Y Y 1 F N
+F0 "J" 650 300 50 H V L CNN
+F1 "22-28-4083" 650 200 50 H V L CNN
+F2 "HDRV8W87P0X254_1X8_2032X249X863P" 650 100 50 H I L CNN
+F3 "https://componentsearchengine.com/Datasheets/1/22-28-4083.pdf" 650 0 50 H I L CNN
+F4 "Headers & Wire Housings BREAKAWAY HDR VERT 8" 650 -100 50 H I L CNN "Description"
+F5 "8.63" 650 -200 50 H I L CNN "Height"
+F6 "538-22-28-4083" 650 -300 50 H I L CNN "Mouser Part Number"
+F7 "https://www.mouser.co.uk/ProductDetail/Molex/22-28-4083?qs=d9fIA1aNikQMlX6q%252Bcx1qQ%3D%3D" 650 -400 50 H I L CNN "Mouser Price/Stock"
+F8 "Molex" 650 -500 50 H I L CNN "Manufacturer_Name"
+F9 "22-28-4083" 650 -600 50 H I L CNN "Manufacturer_Part_Number"
+DRAW
+X 1 1 0 0 200 R 50 50 0 0 U
+X 2 2 0 -100 200 R 50 50 0 0 U
+X 3 3 0 -200 200 R 50 50 0 0 U
+X 4 4 0 -300 200 R 50 50 0 0 U
+X 5 5 0 -400 200 R 50 50 0 0 U
+X 6 6 0 -500 200 R 50 50 0 0 U
+X 7 7 0 -600 200 R 50 50 0 0 U
+X 8 8 0 -700 200 R 50 50 0 0 U
+P 5 0 1 6 200 100 600 100 600 -800 200 -800 200 100 N
+ENDDRAW
+ENDDEF
+#
+#SamacSys ECAD Model 61300611121
+#/278322/130977/2.46/6/3/Connector
+DEF 61300611121 J 0 30 Y Y 1 F N
+F0 "J" 650 300 50 H V L CNN
+F1 "61300611121" 650 200 50 H V L CNN
+F2 "HDRV6W64P0X254_1X6_1524X254X869P" 650 100 50 H I L CNN
+F3 "https://componentsearchengine.com/Datasheets/2/61300611121.pdf" 650 0 50 H I L CNN
+F4 "WR-PHD 2.54mm Pin Header THT Straight 6p Wurth Elektronik WR-PHD Series, Series Number 6130, 2.54mm Pitch 6 Way 1 Row Straight Pin Header, Cable Mount" 650 -100 50 H I L CNN "Description"
+F5 "8.69" 650 -200 50 H I L CNN "Height"
+F6 "710-61300611121" 650 -300 50 H I L CNN "Mouser Part Number"
+F7 "https://www.mouser.co.uk/ProductDetail/Wurth-Elektronik/61300611121?qs=t4813l51qx%2FRpdf0Kp1HlQ%3D%3D" 650 -400 50 H I L CNN "Mouser Price/Stock"
+F8 "Wurth Elektronik" 650 -500 50 H I L CNN "Manufacturer_Name"
+F9 "61300611121" 650 -600 50 H I L CNN "Manufacturer_Part_Number"
+DRAW
+X 1 1 0 0 200 R 50 50 0 0 U
+X 2 2 0 -100 200 R 50 50 0 0 U
+X 3 3 0 -200 200 R 50 50 0 0 U
+X 4 4 0 -300 200 R 50 50 0 0 U
+X 5 5 0 -400 200 R 50 50 0 0 U
+X 6 6 0 -500 200 R 50 50 0 0 U
+P 5 0 1 6 200 100 600 100 600 -600 200 -600 200 100 N
+ENDDRAW
+ENDDEF
+#
+#SamacSys ECAD Model M24M02-DRMN6TP
+#/424444/130977/2.46/8/4/Undefined or Miscellaneous
+DEF M24M02-DRMN6TP U 0 30 Y Y 1 F N
+F0 "U" 950 300 50 H V L CNN
+F1 "M24M02-DRMN6TP" 950 200 50 H V L CNN
+F2 "SOIC127P600X175-8N" 950 100 50 H I L CNN
+F3 "http://www.st.com/content/ccc/resource/technical/document/datasheet/b7/de/9b/f6/03/28/4e/8e/CD00290537.pdf/files/CD00290537.pdf/jcr:content/translations/en.CD00290537.pdf" 950 0 50 H I L CNN
+F4 "STMicroelectronics M24M02-DRMN6TP EEPROM Memory, 2Mbit, 450ns, 1.8  5.5 V 8-Pin SOIC" 950 -100 50 H I L CNN "Description"
+F5 "1.75" 950 -200 50 H I L CNN "Height"
+F6 "511-M24M02-DRMN6TP" 950 -300 50 H I L CNN "Mouser Part Number"
+F7 "https://www.mouser.co.uk/ProductDetail/STMicroelectronics/M24M02-DRMN6TP?qs=0gj%2FgiofzsPtgZ8EdVfF5w%3D%3D" 950 -400 50 H I L CNN "Mouser Price/Stock"
+F8 "STMicroelectronics" 950 -500 50 H I L CNN "Manufacturer_Name"
+F9 "M24M02-DRMN6TP" 950 -600 50 H I L CNN "Manufacturer_Part_Number"
+DRAW
+X DU_1 1 0 0 200 R 50 50 0 0 U
+X DU_2 2 0 -100 200 R 50 50 0 0 U
+X E2 3 0 -200 200 R 50 50 0 0 U
+X VSS 4 0 -300 200 R 50 50 0 0 U
+X VCC 8 1100 0 200 L 50 50 0 0 U
+X WC 7 1100 -100 200 L 50 50 0 0 U
+X SCL 6 1100 -200 200 L 50 50 0 0 U
+X SDA 5 1100 -300 200 L 50 50 0 0 U
+P 5 0 1 6 200 100 900 100 900 -400 200 -400 200 100 N
+ENDDRAW
+ENDDEF
+#
 #End Library
